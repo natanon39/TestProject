@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alonedev.testproject.model.Photo;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.GlideUrl;
+import com.bumptech.glide.load.model.LazyHeaders;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -38,7 +41,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.photo_title.setText(mData.get(position).getTitle());
-       Picasso.with(mContext).load("via.placeholder.com/600/e9b68.png").fit().centerInside().into(holder.photo_thumbnail);
+        GlideUrl url = new GlideUrl(mData.get(position).getThumbnailUrl(), new LazyHeaders.Builder()
+                .addHeader("User-Agent", "your-user-agent")
+                .build());
+       Glide.with(mContext).load(url).fitCenter().into(holder.photo_thumbnail);
     }
 
     @Override
