@@ -14,8 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:scaleType="centerCrop"
-        android:background="#9A9A9A"
-        android:src="@drawable/ic_launcher_foreground">
+        android:background="#9A9A9A">
     </ImageView>
     <TextView
         android:id="@+id/photo_title_id"
