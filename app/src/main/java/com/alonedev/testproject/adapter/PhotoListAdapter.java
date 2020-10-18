@@ -39,7 +39,7 @@ public class PhotoListAdapter extends RecyclerView.Adapter<PhotoListAdapter.MyVi
     @NonNull
     @Override
     public PhotoListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.photo_list, parent, false);
         return new MyViewHolder(view);
 
     }
@@ -67,7 +67,7 @@ public class PhotoListAdapter extends RecyclerView.Adapter<PhotoListAdapter.MyVi
         return 0;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView photoTitle;
         ImageView photoImage;
 
@@ -80,6 +80,6 @@ public class PhotoListAdapter extends RecyclerView.Adapter<PhotoListAdapter.MyVi
 
     public interface ItemClickListener
     {
-        public void onClickCard(PhotoModel photoModel);
+        void onClickCard(PhotoModel photoModel);
     }
 }

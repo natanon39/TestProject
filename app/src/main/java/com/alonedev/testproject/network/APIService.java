@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface APIService {
-    //dynamic path
+
     @GET("/{path1}/{path2}/{path3}")
     Call<List<PhotoModel>> contributor(
             @Path("path1") String path1,
