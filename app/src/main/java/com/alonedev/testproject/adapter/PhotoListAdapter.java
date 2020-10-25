@@ -19,9 +19,9 @@ import com.bumptech.glide.load.model.LazyHeaders;
 import java.util.List;
 
 public class PhotoListAdapter extends RecyclerView.Adapter<PhotoListAdapter.MyViewHolder> {
-    private Context context;
+    private final Context context;
     private List<PhotoModel> photoLists;
-    private ItemClickListener clickListener;
+    private final ItemClickListener clickListener;
 
     public PhotoListAdapter(Context context, List<PhotoModel> photoLists,ItemClickListener clickListener) {
         this.context = context;

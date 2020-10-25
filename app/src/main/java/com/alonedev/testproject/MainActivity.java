@@ -2,6 +2,7 @@ package com.alonedev.testproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements PhotoListAdapter.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         setTitle("Photos");
 
         RecyclerView recycleView = findViewById(R.id.recyclerview);
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements PhotoListAdapter.
                 }
             }
         });
-
         photoListViewModel.makeApiCall();
     }
 

@@ -3,6 +3,7 @@ package com.alonedev.testproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.alonedev.testproject.model.PhotoModel;

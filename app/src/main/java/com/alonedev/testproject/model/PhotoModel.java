@@ -24,18 +24,6 @@ public class PhotoModel implements Parcelable {
         thumbnailUrl = in.readString();
     }
 
-    public static final Creator<PhotoModel> CREATOR = new Creator<PhotoModel>() {
-        @Override
-        public PhotoModel createFromParcel(Parcel in) {
-            return new PhotoModel(in);
-        }
-
-        @Override
-        public PhotoModel[] newArray(int size) {
-            return new PhotoModel[size];
-        }
-    };
-
     public int getAlbumId() {
         return this.albumId;
     }
@@ -55,6 +43,18 @@ public class PhotoModel implements Parcelable {
     public String getThumbnailUrl() {
         return this.thumbnailUrl;
     }
+
+    public static final Creator<PhotoModel> CREATOR = new Creator<PhotoModel>() {
+        @Override
+        public PhotoModel createFromParcel(Parcel in) {
+            return new PhotoModel(in);
+        }
+
+        @Override
+        public PhotoModel[] newArray(int size) {
+            return new PhotoModel[size];
+        }
+    };
 
     @Override
     public int describeContents() {

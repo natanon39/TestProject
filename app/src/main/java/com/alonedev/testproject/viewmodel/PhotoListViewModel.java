@@ -3,6 +3,7 @@ package com.alonedev.testproject.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.alonedev.testproject.Constants;
 import com.alonedev.testproject.model.PhotoModel;
 import com.alonedev.testproject.network.APIService;
 import com.alonedev.testproject.network.RetrofitService;
@@ -17,7 +18,7 @@ import retrofit2.Response;
 
 public class PhotoListViewModel extends ViewModel {
 
-    private MutableLiveData<List<PhotoModel>> photoModels;
+    private final MutableLiveData<List<PhotoModel>> photoModels;
 
     public PhotoListViewModel() {
         photoModels = new MutableLiveData<>();
@@ -28,7 +29,7 @@ public class PhotoListViewModel extends ViewModel {
     }
 
     public void makeApiCall() {
-        APIService apiService = RetrofitService.getRetrofitClient("https://jsonplaceholder.typicode.com/").create(APIService.class);
+        APIService apiService = RetrofitService.getRetrofitClient(Constants.getBase_url()).create(APIService.class);
         Call<List<PhotoModel>> call = apiService.contributor("albums", "1", "photos");
         call.enqueue(new Callback<List<PhotoModel>>() {
             @Override
